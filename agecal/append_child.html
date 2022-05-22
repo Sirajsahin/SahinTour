@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div id="div_target">
+        <p id="p1">This is the first para</p>
+        <p id="p2">This is the secound para</p>
+        <p id="p3">This is the third para</p>
+
+    </div>
+    <button id="button" >Try it</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <a href="https://www.w3schools.com/js/js_random.asp" target="window.open()">Open link</a> 
+    <script>
+        // insert a para as child node
+        // let para=document.createElement("p");
+        // let iteam=document.createTextNode("This is new para");
+        // para.appendChild(iteam);
+        // let element=document.getElementById("div_target");
+        // element.appendChild(para);
+
+        //insert a para before a targeted para
+        // const para=document.createElement("p");
+        // const node=document.createTextNode("Hey i add before the id p2");
+        // para.appendChild(node);
+        // const element =document.getElementById("div_target");
+        // const child=document.getElementById("p2");
+        // element.insertBefore(para,child);
+
+        // //remove a para
+        // const p3=document.getElementById("p3");
+        // p3.remove();
+
+        // browser not support we use removeChild method
+        // const element =document.getElementById("div_target");
+        // const para=document.getElementById("p3");
+        // element.removeChild(para);
+        
+        //replace a child to the existing para
+        // const para=document.createElement("p");
+        // const node=document.createTextNode("new para");
+        // para.appendChild(node);
+        // const element=document.getElementById("div_target");
+        // const child=document.getElementById("p2");
+        // element.replaceChild(para,child);
+
+        //HTML collecton 
+        // function fun1(){
+        // const myCollection=document.getElementsByTagName("p");
+        // for(let i=0;i<myCollection.length;i++){
+        //     myCollection[i].style.color="red";
+        //     myCollection[i].style.fontSize="50px";
+        // }
+        // }
+
+        //HTML collection is not support all browser we use NodeList
+
+        // function fun1(){
+        //     const myCollection=document.querySelectorAll('p');
+        //     for(let i=0;i<myCollection.length;i++){
+        //         myCollection[i].style.color="red";
+        //     }
+        // }
+        //event listener 
+        // document.getElementById("button").addEventListener("mouseover",fun1);
+        // function fun1(){
+        //     const myCollection=document.querySelectorAll('p');
+        //     for(let i=0;i<myCollection.length;i++){
+        //         myCollection[i].style.color="red";
+        //     }
+        // }
+        //
+        // document.getElementById("button").addEventListener("mousemove",fun1);
+        // function fun1(){
+        //     const myCollection=document.querySelectorAll('p');
+        //     for(let i=0;i<myCollection.length;i++){
+        //         myCollection[i].style.color="red";
+        //     }
+        // }
+        // document.getElementById("button").addEventListener("click",fun1);
+        // function fun1(){
+        //     const myCollection=document.querySelectorAll('p');
+        //     for(let i=0;i<myCollection.length;i++){
+        //         myCollection[i].style.color="red";
+        //     }
+        // }
+
+        //BOM
+        // document.getElementById('demo').innerHTML="window width "+window.innerWidth+"px <br>"+"Window height "+window.innerHeight+"px";
+        // //open window or tab window.open() method.
+        // document.getElementById('demo1').innerHTML="current URl :"+window.location.href;
+        // document.getElementById('button').addEventListener("click",function fun1(){
+        //     window.location.assign("https://www.w3schools.com")
+        // })
+        
+
+        // js Asyn
+        // javaScript function are executed in the sequence  they are called . not they are defined.
+        // function fun1(){//define a function
+        //     document.getElementById('demo').innerHTML="this is first function";
+        // }
+        // function fun2(){
+        //     document.getElementById('demo1').innerHTML='this secound function';
+        // }
+        // fun1();// call a function
+        // fun2();
+
+        //in this case we call two function to calculate the result
+        // function display(some){
+        //     document.getElementById('demo').innerHTML=some;
+        // }
+        // function addTwonumer(num1,num2){
+        //     let add=num1+num2;
+        //     return add;
+        // }
+        // const result=addTwonumer(5,6);
+        // display(result);
+
+        //it is easier to calculate the result
+        // function display(some){
+        //     document.getElementById('demo').innerHTML=some;
+        // }
+        // function add(a,b){
+        //     let result=a+b;
+        //     display(result);
+        // }
+        // add(5,16);
+
+        // function call(some){
+        //     console.log("this is call back function"+ some);
+        // }
+        // function fun(some,num1,num2,callBack){
+        //     console.log("this a function "+some);
+        //     let result =num1+num2;
+        //     callBack(result);
+        // }
+        //  fun("i am siraj",2,3,call)
+
+        // in this above function to wait compilting this first function then cal back run
+
+        //use to setInterval() to achive
+
+        // function call(){
+        //     console.log("hhh");
+        // }
+        // function add(num,callBack){
+        // //    let result=num1+num2;
+        // console.log(num);
+        //    callBack();
+        // }
+        // setInterval(add,2000,"hey",call);
+        // console.log('not waiting')
+
+        // setTimeout(()=>{
+        //     console.log("hey");
+        // },3000); 
+        const myFunction=()=>{
+            const date=new Date();
+            const hour=date.getHours();
+            const minute=date.getMinutes();
+            const secound=date.getSeconds();
+            document.getElementById('demo').innerHTML=hour+" "+minute+" "+secound;
+        }
+        setInterval(myFunction,1000);
+      
+        // </script>const date=new Data();
+        //  hour =date.getHours();
+        //  minute=date.getMinutes();
+        //  second=getSeconds();
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="text_edit.css"/>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+   
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Text Editor</h1>
+      </div>
+      <div class="button_area">
+        <button id="bb" onclick="f1()">Bold</button>
+        <button id="bb2" onclick="f2()">Italic</button>
+        <button id="bb3" onclick="f3()"><i class="fas fa-align-left"></i></button>
+        <button id="bb4"onclick="f4()"><i class="fas fa-align-center"></i></button>
+        <button id="bb5" onclick="f5()"><i class="fas fa-align-right"></i></button>
+        <button id="bb6" onclick="f6()">Upper Case</button>
+        <button id="bb7" onclick="f7()">Lower Case</button>
+        <button id="bb8" onclick="f8()">Capitalize</button>
+        <button  onclick="f10()">A++</button>
+        <button  onclick="f11()">A--</button>
+        <button onclick="f9()">Clear Text</button>
+      </div>
+      <div class="text-area">
+          <textarea id="textarea"  placeholder="Enter your text....."></textarea>
+      </div>
+      <p  style="margin-left: 100px;">Word length : <span id="word" style="margin-left: 10px;font-size: 15px; color: #ef0909;"></span></p>
+      <p  style="margin-left: 100px;">Word Count : <span id="Numword" style="margin-left: 10px;font-size: 15px; color: #ef0909;"></span></p>
+    </div>
+    <script src="text_edit.js"></script>
+  </body>
+</html>

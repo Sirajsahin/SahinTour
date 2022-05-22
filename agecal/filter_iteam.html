@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            padding: 15px 25px;
+            cursor: pointer;
+            color: aliceblue;
+            background-color: aqua;
+            margin: 5px;
+        }
+        .active{
+            background-color: brown;
+            color: aliceblue;
+        }
+        .btn-part{
+            margin-left: -100px;
+            cursor: pointer;
+        }
+        .btn-part:hover{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.8s;
+        }
+        .body-item{
+          margin: 50px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .content{
+            width: 200px;
+            height: auto;
+            background-color: blueviolet;
+            border-radius: 2px solid red;
+            padding:10px;
+            color: aliceblue;
+            margin-top: 10px;
+        }
+        .content:hover{
+            opacity: 0.8;
+            cursor: pointer;
+            background-color: rgb(126, 126, 26);
+        }
+   .content h3{
+       color: aquamarine;
+   }
+   .show {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <h1 style="text-align: center;">Filtering Iteam</h1>
+        </div>
+        <div class="btn-part">
+            <button class="btn active" onclick="showData('all')">Show All</button>
+            <button class="btn" onclick="showData('bengoli')">Bengoli</button>
+            <button class="btn" onclick="showData('hindi')">Hindi</button>
+            <button class="btn" onclick="showdata('english')">English</button>
+        </div>
+        <div class="body-item" id="filtering">
+            <div class="content">
+                <img src="image/four.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+            <div class="content">
+                <img src="image/tow.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+            <div class="content">
+                <img src="image/four.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+            <div class="content">
+                <img src="image/four.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+            <div class="content">
+                <img src="image/three.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+            <div class="content">
+                <img src="image/four.jpg"
+                    alt="HTML" style="width:100%">
+                <h3><a href="#">
+                    HTML Tutorials
+                    </a>
+                </h3>
+                 
+                  <p>
+                    HTML stands for Hyper Text Markup
+                    Language. It is used to design web
+                    pages using markup language. HTML
+                    is the combination of Hypertext
+                    and Markup language. Hypertext
+                    defines the link between the web
+                    pages.
+                </p>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

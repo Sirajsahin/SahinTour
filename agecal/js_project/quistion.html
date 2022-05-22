@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Quistion</title>
+     <style>
+         #answer{
+             display: none;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="app">
+       <div class="area-text">
+           <div class="quistion">
+                <div>
+                    <h1>click</h1>
+                    <button id="quistion">Show</button>
+                </div>
+               <p id="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+                dolore illo dolores quia nemo doloribus quaerat, magni numquam
+                repellat reprehenderit.</p>
+           </div>
+       </div>
+       <div class="quistion">
+        <div>
+            <h1>click</h1>
+            <button id="quistion">Show</button>
+        </div>
+       <p id="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+        dolore illo dolores quia nemo doloribus quaerat, magni numquam
+        repellat reprehenderit.</p>
+   </div>
+</div>
+<div class="quistion">
+    <div>
+        <h1>click</h1>
+        <button id="quistion">Show</button>
+    </div>
+   <p id="answer"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+    dolore illo dolores quia nemo doloribus quaerat, magni numquam
+    repellat reprehenderit.</p>
+</div>
+</div>
+     </div>
+     <script>
+         const questions = document.querySelectorAll(".question");
+
+           questions.forEach(function (question) {
+         const para=document.getElementById('answer');
+         document.getElementById("quistion").addEventListener('click',function(){
+           if(para.style.display=="none"){
+               para.style.display="block";
+           }else{
+            para.style.display="none";
+           }
+         })
+        }
+     </script>
+ </body>
+ </html>

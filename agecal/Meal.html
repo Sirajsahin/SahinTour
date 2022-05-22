@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Find</title>
+    <style>
+              body{
+                  background-color: blueviolet;
+              }
+              .container{
+                   margin: 100px;
+                   text-align: center;
+              }
+              .box{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 8px;
+              }
+              .container h1{
+                  text-align: center;
+                  color: rgb(243, 224, 10);
+              }
+              button{
+                  padding: 8px 20px;
+                  cursor: pointer;
+                  background-color: rgb(31, 189, 65);
+                  border-style: none;
+                  color: azure;
+                  font-size: 15px;
+              }
+              button :hover{
+                  background-color: chartreuse;
+                  /* opacity: 0.7; */
+              }
+              #searchfield{
+                  padding: 8px 30px;
+              }
+              .result-area{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+              }
+
+              #item {
+                  display: grid;
+                  grid-template-columns: repeat(4,1fr);
+                  grid-gap: 20px;
+                  margin-top: 20px;
+              }
+               .meal{
+                   width: 180px;
+                   height: 180px;
+                   cursor: pointer;
+                   position: relative;
+                   text-align: center;
+               }
+               .meal img{
+                   height: 100%;
+                   width: 100%;
+                   border: 4px solid #fff;
+                   border-radius: 2px;
+               }
+               .meal-info{
+                  position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: rgba(0,0,0,0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: opacity 0.2s ease-in;
+          color: #d0dddd;
+          opacity: 0;
+      }
+      .meal:hover .meal-info:hover{
+          opacity: 1;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meal Finder</h1>
+      <div class="box">
+        <input type="text" placeholder="search meal like " id="searchfield" />
+        <button type="submit" id="search-btn">Find</button>
+        <button type="submit" id="random-btn">Random search</button>
+      </div>
+      <h2 id="status"></h2>
+      <div class="result-area">
+        <div id="item"></div>
+      </div>
+    </div>
+    <script>
+      const input = document.getElementById("searchfield");
+      const search = document.getElementById("search-btn");
+      const random = document.getElementById("random-btn");
+      const result = document.getElementById("item");
+      const status = document.getElementById("status");
+
+      function findResult(e) {
+        e.preventDefault();
+        result.innerHTML = "";
+        const val = input.value;
+        //cheik for empty
+        if (val.trim()) {
+          fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`)
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              status.innerHTML = `<h1>search result for ${val}</h1>`;
+              if (data.meals == null) {
+                status.innerHTML = `<h1>no result found for ${val}</h1>`;
+              } else {
+                result.innerHTML = data.meals
+                  .map(
+                    (meal) =>
+                      `<div class="meal">
+                            <img src="${meal.strMealThumb}" alt="${meal.strMeal}"/>
+                            <div class="meal-info" data-mealID="${meal.idMeal}">
+                                <h2>${meal.strMeal}</h2>
+                            </div>
+                          </div>`
+                  )
+                  .join("");
+              }
+            });
+        } else {
+          alert("Please Enter a meal");
+        }
+        console.log(val);
+        //    fetch()
+        //    .then((response)=>response.json()).then((data)=>)
+      }
+ function getMealById(mealID){
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const meal = data.meals[0];
+      addMealToDom(meal);
+    })
+ }
+
+ function addMealToDom(data){
+ 
+ }
+      search.addEventListener("click", findResult);
+      result.addEventListener('click',e=>{
+       const mealinfo=e.path.find(item=>{
+           if(item.classList){
+               return item.classList.contains("meal-info");
+           }else{
+               return false;
+           }
+       })
+       if(mealinfo){
+           const mealID=mealinfo.getAttribute("data-mealid");
+           getMealById(mealID);
+       }
+      })
+    </script>
+  </body>
+</html>

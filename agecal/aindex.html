@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+   <div>
+    <form  name="f" onsubmit="calculate()">
+        <label>Product Name</label>
+        <input type="text" /><br><br>
+         <label>Description</label>
+         <input type="text" /><br><br>
+         <label>Cost Price</label>
+         <input name="cp" type="number"/><br><br>
+         <label>discount</label>
+         <input name="ds" type="number"/><br><br>
+         <button id="submit">Calculate</button>
+    </form>
+    <p id="demo"></p>
+   </div>
+
+    <script>
+     document.getElementById('submit').addEventListener("click",function calculate(e){
+
+         e.preventDefault();
+         const val=document.forms['f']['cp'].value;
+         const dis=document.forms['f']['ds'].value;
+         
+           const calculate =val-val*dis/100;
+           document.getElementById('demo').innerHTML=calculate;
+     } 
+    );
+          
+//   var user_list= [ {USER:"bob", SCORE:2000, TIME:32, AGE:16, COUNTRY:"US"}, {USER:"jane", SCORE:4000, TIME:35, AGE:16, COUNTRY:"DE"}, {USER:"tim", SCORE:1000, TIME:30, AGE:17, COUNTRY:"UK"}, {USER:"mary", SCORE:1500, TIME:31, AGE:19, COUNTRY:"PL"}, {USER:"joe", SCORE:2500, TIME:33, AGE:18, COUNTRY:"US"}, {USER:"sally", SCORE:2000, TIME:30, AGE:16, COUNTRY:"CA"}, {USER:"yuri", SCORE:3000, TIME:34, AGE:19, COUNTRY:"RU"}, {USER:"anita", SCORE:2500, TIME:32, AGE:17, COUNTRY:"LV"}, {USER:"mark", SCORE:2000, TIME:30, AGE:18, COUNTRY:"DE"}, {USER:"amy", SCORE:1500, TIME:29, AGE:19, COUNTRY:"UK"} ];
+  
+    
+//   user_list[0][AGE];
+//     //  const str="";
+//     //  for(let i=0;i<user_list.length;i++){
+//     //      str+=user_list[i].AGE;
+//     //  }
+
+//   async function fun2(){
+//         const res= await fetch(url);
+//         const data=await res.json();
+//         return data;
+//   }
+
+//   fun2().then((data)=>console.log(data)).catch(()=>console.log("sorry it has been an error"));
+  
+//   let arr=["a","b","c"];
+//   let arr2=[1,2,3,4];
+//   const data=[...arr,];
+
+
+
+
+//         function fun1(){
+//             return new Promise((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                     let eror=true;
+//                     if(!eror){
+//                         console.log("resolve");
+//                         resolve();
+//                     }else{
+//                         consolo.log("reject");
+//                         reject();
+//                     }
+//                 },2000)
+//             })
+//         }
+        
+//         fun1().then(function(){
+//             console.log("yeh it resolve");
+//         }).catch(function(){
+//             consolo.log("sorry this is not complete that u want");
+//         })
+    </script>
+</body>
+</html>

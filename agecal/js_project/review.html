@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        .app{
+           
+            margin: 100px;
+        }
+        .box{
+            width: 60vw;
+            height: auto;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+             padding: 30px;
+            
+        }
+       .img-part{
+           width: 150px;
+           height: 150px;
+           border-radius: 50%;
+       }
+       .img-part img{
+           height: 100%;
+           width: 100%;
+           object-fit: cover;
+           border-radius: 50%;
+          
+       }
+       .btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+       }
+       #random{
+           margin-top: 10px;
+           padding: 15px 20px;
+           background-color: aqua;
+           cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="app">
+      <div class="box">
+        <div class="img-part">
+            <img src="person-1.jpeg" id="img" alt="img"/>
+        </div>
+        <h2 id="peter">peter</h2>
+        <p id="info">I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry</p>
+        <div class="btn">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+        <button id="random">Surprice  me</button>
+      </div>
+    </div>
+    <script>
+
+        const reviews = [
+  {
+    id: 1,
+    name: "susan smith",
+    job: "web developer",
+    img:
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
+    text:
+      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+  },
+  {
+    id: 2,
+    name: "anna johnson",
+    job: "web designer",
+    img:
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
+    text:
+      "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+  },
+  {
+    id: 3,
+    name: "peter jones",
+    job: "intern",
+    img:
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
+    text:
+      "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
+  },
+  {
+    id: 4,
+    name: "bill anderson",
+    job: "the boss",
+    img:
+      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
+    text:
+      "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
+  },
+];
+        const prev=document.getElementById('prev');
+        const next =document.getElementById('next');
+        const random=document.getElementById('random');
+        const para=document.getElementById('info');
+        const head=document.getElementById('peter');
+        const img=document.getElementById('img');
+       
+       let currentItem=0
+         prev.addEventListener('click',function() {
+            currentItem--;
+            if(currentItem<0){
+                currentItem=reviews.length-1;
+            }
+            const item=reviews[currentItem];
+            para.textContent=item.text;
+            head.textContent=item.name;
+            img.src=item.img;
+
+         })
+         next.addEventListener('click',function() {
+            currentItem++;
+            if(currentItem>reviews.length-1){
+                currentItem=0;
+            }
+            const item=reviews[currentItem];
+            para.textContent=item.text;
+            head.textContent=item.name;
+            img.src=item.img;
+
+         })
+         random.addEventListener('click',function() {
+             const random=Math.floor(Math.random()*reviews.length);
+             const item=reviews[random];
+             para.textContent=item.text;
+             head.textContent=item.name;
+             img.src=item.img;
+         })
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FromValidation</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-text{
+            width: 30vw;
+            height: auto;
+            background-color: blueviolet;
+            padding: 20px;
+            margin: 100px;
+        }
+       .form{
+        display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+ label{
+     font-size: 20px;
+     display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    text-align: center;
+
+ }
+ input{
+    padding: 8px 25px;
+    border: transparent;
+    border-radius: 5px;
+ }
+    </style>
+</head>
+<body>
+    <div class="box">
+       <div class="box-text">
+           <form class="form" name="myform">
+               <label>Name :
+               <input type="text" name="name" /></label>
+               <span id="err"></span>
+               <label>Email :
+               <input type="email" name="email"/></label>
+               <span id="err"></span>
+               <label>Password :
+               <input type="password" name="password"/></label>
+               <span id="err"></span>
+               <label>Are you a Student
+               <input type="checkbox" name="chk"/></label>
+               <button type="submit" id="btn">Submit</button>
+           </form>
+           <p id="demo"></p>
+       </div>  
+    </div>
+    <script>
+      
+      document.getElementById('btn').addEventListener('onclick',function(e){
+         e.preventDefault();
+         const name=document.myform.name.value;
+         const email=document.myform.email.value;
+         const pass=document.myform.password.value;
+         const box=document.myform.chk.value;
+         const err=document.getElementById('err');
+         if(name==""){
+            alert('Name must be field')
+            document.myform.name.focus();
+         }
+           else if(email==''){
+            alert('Enter your email')
+            document.myform.email.focus();
+         }else if(pass.length<5){
+             alert('password must be minimu 6 character')
+             document.myform.password.focus();
+         }
+         document.getElementById("demo").innerHTML = name;
+         console.log(name)
+        // +  email ${email} password is ${pass}`;
+      })
+    </script>
+</body>
+</html>

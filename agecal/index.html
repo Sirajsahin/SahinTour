@@ -1,0 +1,38 @@
+<html>
+    <head>
+        
+        <link href="style.css" rel="stylesheet">
+    </head>
+        <body class="area">
+        <h1>AGE CALCULATOR</h1>
+         <form onsubmit="submitform(e)">
+             <label>ENTER YOUR DOB</label>
+             <input id="dob" type="date"/>
+            <button id="btn">Calculate</button>
+         </form>
+         <p id="alert"></p>
+         <p id="result"></p>
+         <script>
+             
+             document.getElementById("btn").addEventListener("click",function submitform(e){
+                  e.preventDefault();
+                 var input=document.getElementById("dob").value;
+                 var date=new Date(input);
+                 if(input==null||input==''){
+                     document.getElementById("alert").innerHTML="Please enter your date of birth";
+                     return false;
+                 }
+                 else{
+                     var month_d=Date.now()-date.getTime();
+                     var age_d=new Date(month_d);
+                     var year=age_d.getUTCFullYear();
+                     var age=Math.abs(year-1970);
+                     console.log(age);
+                     return document.getElementById("result").innerHTML="Age is "+age+ " years";
+
+                 }
+             })
+         </script>
+        </body>
+    
+</html>

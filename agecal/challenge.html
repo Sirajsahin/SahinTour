@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p"></p>
+    <h1 id="title"></h1>
+</body>
+<script>
+    const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+    function fun(){
+        fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=cd27e7d96b1871bb1f0f6972616cf43a&page='+1)
+        .then(res=>res.json()).then(data=> {
+            console.log(data)
+            document.getElementById('p').innerHTML=
+            data.results.map(data=>
+               
+            `<div>
+                <img src="${IMG_PATH+data.poster_path}" alt="${data.title}"/>
+                <h1>${data.title}</h1>
+            </div>`
+            )
+        })
+    }
+    fun();
+</script>
+
+</html>
