@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+ <style>
+     #clock {
+			font-size: 175px;
+			width: 900px;
+			margin: 200px;
+			text-align: center;
+			border: 2px solid rgb(184, 64, 64);
+			border-radius: 20px;
+		}
+ </style>
+    </head>
+    <body>
+        <div  id="clock"></div>
+    </body>
+    <script>
+        setInterval(showTime,1000);
+        function showTime(){
+            let time=new Date();
+            let hour=time.getHours();
+            let min = time.getMinutes();
+            let sec= time.getSeconds();
+            am_pm="Am";
+
+            if(hour>12){
+                hour=hour-12;
+                console.log(hour);
+                am_pm="PM";
+            }
+            if(hour == 0){
+                hour=12;
+                am_pm="AM";
+            }
+            // if(hour<10){
+            //     hour="0"+hour;
+            // }else{
+            //     hour=hour;
+            // }
+            hour=hour<10?"0"+hour:hour;
+            min = min<10?"0"+min:min;
+            sec=sec<10?"0"+see:sec;
+            let currentTime=hour+":"+min+":"+sec+am_pm;
+            document.getElementById("clock").innerHTML=currentTime;
+
+        }
+   showTime();
+</script>
+</html>

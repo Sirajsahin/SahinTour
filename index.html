@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>
+        
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+   
+</head>
+<body>
+    <form>
+        Enter Phone Number :
+        <input type="text"><br><br>
+        <button onclick="generateOTP()">Play Game For Truth And Dare</button>
+    </form>
+  <p>your otp is <span id="otp"></span></p>
+
+    <script >
+        
+
+  
+
+  function generateOTP() {
+//     for(let i=0;i<50;i++){
+//     console.log("harun"); 
+//    } 
+//       Declare a digits variable 
+//       which stores all digits
+      var digits =  ["moyed","Zisan","Rahid","Fahad","Mamun","Chand","Sagor","Sarfaraj","Babul","Suraj","Zakir","Samir","Joni","Rij","Noyon","Nabirul","Sahan","Durul"];
+      var Work =  ["Gan","Water","Clean","Dance","Truth","Fav acctor","Fav hobby","Fav song","Fav player"];
+      let OTP = '';
+      let OTP2 = '';
+      for (let i = 0; i <20; i++ ) {
+          OTP = digits[i];
+          alert("Your Name is : "+OTP);
+
+for(let i=0;i<1;i++){
+    OTP2=Work[Math.floor(Math.random() * 9)]
+}
+alert(OTP +" Now Doing  " +OTP2);
+      }
+     
+    //   document.getElementById("otp").innerHTML=OTP;
+  }
+    
+//   document.write("OTP of 4 digits: ")
+  
+
+
+
+
+
+
+
+    //   function generateOTP() {
+    //     document.getElementById('otp').innerHTML="harun";
+    // //       // Declare a digits variable 
+    // //       // which stores all digits
+    //       var digits = ['siraj','app'];
+    //       let OTP = '';
+    //       for (let i = 0; i < 1; i++ ) {
+    //           OTP += digits[Math.floor(Math.random() * 3)];
+    //           console.log(OTP);
+    //       }
+         
+    //   }
+
+        // function Click(){
+        //     console.log("fdb")
+        //     const digits="0123456789";
+        //     let otp="";
+
+        //     for(let i=0;i<6;i++){
+        //         otp +=digits[Math.floor(Math.random() * 10)];
+        //     }
+
+           
+        // }
+
+        // document.getElementById('otp').innerHTML="shgdbs"+otp;
+        
+
+    </script>
+</body>
+</html>
